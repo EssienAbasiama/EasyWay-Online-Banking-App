@@ -16,13 +16,18 @@ public class MailConfig {
         props.put("mail.smtp.auth","true");
         props.put("mail.smtp.starttls.enabled","true");
         props.put("mail.debug","true");
-
+//For HMailServer
 //        Set Mail Credentials
-        emailConfig.setHost("localhost");
-        emailConfig.setPort(25);
-        emailConfig.setUsername("abasiama@gmail.com");
-        emailConfig.setPassword("Tetfunds01.");
+//        emailConfig.setHost("localhost");
+//        emailConfig.setPort(25);
+//        emailConfig.setUsername("abasiama@gmail.com");
+//        emailConfig.setPassword("Tetfunds01.");
 
+//For Mail Trap
+        emailConfig.setHost("smtp.mailtrap.io");
+        emailConfig.setPort(2525);
+        emailConfig.setUsername("efcb11326fd8e0");
+        emailConfig.setPassword("3ced9bf5d3d9a3");
 
         return emailConfig;
     }

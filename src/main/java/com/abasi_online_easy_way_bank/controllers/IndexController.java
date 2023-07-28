@@ -27,15 +27,6 @@ private UserRepository userRepository;
         return getIndexPage;
     }
 
-    @GetMapping("/login")
-    public ModelAndView getLogin() {
-        ModelAndView getLoginPage = new ModelAndView("login");
-        System.out.println("In login Controller");
-        getLoginPage.addObject("PageTitle","Login");
-         return getLoginPage;
-    }
-
-
     @GetMapping("/dashboard")
     public ModelAndView getDashBoard() {
         ModelAndView getDashboardPage = new ModelAndView("dashboard");

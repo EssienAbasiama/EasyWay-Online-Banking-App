@@ -72,7 +72,7 @@ ModelAndView registrationPage = new ModelAndView("register");
         MailMessenger.htmlEmailMessenger("abasiama@gmail.com",email,"Verify Account",emailBody);
 //      TODO: Return to Register Page
         String successMessage = "Account Registered Successfully, Kindly Check your Email to Verify Account";
-        registrationPage.addObject("successfulRegistration,", successMessage);
+        registrationPage.addObject("SUCCESS,", successMessage);
         return  registrationPage;
     }
 }

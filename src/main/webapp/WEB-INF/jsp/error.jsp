@@ -16,7 +16,7 @@
         
         body {
             height: 100vh;
-            background-image: url("images/main_bg.png");
+            background-image: url("./images/main_bg.png");
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -34,31 +34,37 @@
 </head>
 
 <body class="d-flex align-items-center justify-content-center">
-    <!-- Card: Error Card -->
-    <div class="card col-4 alert alert-danger border border-danger text-danger">
-        <!-- Card Title -->
-        <h3 class="card-title">
-            <i class="fa fa-window-close me-2"></i>Errors;
-            <!--End Card Body -->
-        </h3>
-        <hr>
-        <!-- Card Body -->
-        <div class="card-body">
-            <!-- Card Text -->
-            <p class="card-text">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore perferendis quo, iure minus explicabo doloribus nisi ipsa et voluptatibus quidem!
-            </p>
-            <!-- End of Card Text -->
-            <hr>
-            <!-- Back to Login Page -->
-            <a href="/login" class="btn btn-sm btn-danger">
-                <i class="fa fa-arrow-alt-circle-left me-1"></i>Back
-            </a>
-            <!-- End of Nack to Login Page -->
+<!-- Card: Error Card -->
+<div class="card col-4 alert alert-danger border border-danger text-danger">
+    <!-- Card Title -->
+    <h3 class="card-title">
+        <i class="fa fa-window-close me-2"></i>Errors:
+    </h3>
+    <!-- End Of Card Title -->
+    <hr>
+    <!-- Card Body -->
+    <div class="card-body">
+        <!-- Card Text -->
+        <p class="card-text">
+            <!-- Display Message -->
+            <c:if test="${requestScope.error != null}">
+        <div class="alert alert-danger text-center border border-danger">
+            <b>${requestScope.error}</b>
         </div>
-        <!--End of Card Body -->
+        </c:if>
+        <!-- End Of Display Message -->
+        </p>
+        <!-- End Of Card Text -->
+        <hr>
+        <!-- Back To Login Page -->
+        <a href="/login" class="btn btn-sm btn-danger">
+            <i class="fa fa-arrow-alt-circle-left me-1"></i> Back
+        </a>
+        <!-- End Of Back To Login Page -->
     </div>
-    <!-- End of Card: Error Card -->
+    <!-- End Of Card Body -->
+</div>
+<!-- End Of Card: Error Card -->
 </body>
 
 </html>

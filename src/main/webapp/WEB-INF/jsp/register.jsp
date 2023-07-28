@@ -32,11 +32,11 @@
                     <b>${requestScope.passwordMisMatch}</b>
                 </div>
             </c:if>
-            <c:if test="${requestScope.successfulRegistration != null}">
-                <div class="alert alert-success text-center border border-success">
-                    <b>${requestScope.successfulRegistration}</b>
-                </div>
-            </c:if>
+<%--            <c:if test="${requestScope.successfulRegistration != null}">--%>
+<%--                <div class="alert alert-success text-center border border-success">--%>
+<%--                    <b>${requestScope.successfulRegistration}</b>--%>
+<%--                </div>--%>
+<%--            </c:if>--%>
             <c:if test="${requestScope.SUCCESS != null}">
                 <div class="alert alert-success text-center border border-success">
                     <b>${requestScope.SUCCESS}</b>

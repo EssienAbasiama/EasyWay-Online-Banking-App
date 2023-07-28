@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%--<%@ taglib prefix = "fn" uri = "http://java.sun.com/jsp/jstl/functions" %>--%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,25 +24,38 @@
                 <i class="fa fa-edit"></i>Login
             </h1>
             <!-- End Form Header -->
-<%--            Display Message--%>
+            <%--Display Message--%>
             <c:if test="${requestScope.SUCCESS != null}">
                 <div class="alert alert-success text-center border border-success">
                     <b>${requestScope.SUCCESS}</b>
                 </div>
             </c:if>
+            <%--Display Message--%>
+            <c:if test="${requestScope.error != null}">
+                <div class="alert alert-danger text-center border border-danger">
+                    <b>${requestScope.error}</b>
+                </div>
+            </c:if>
+<%--            Display Message--%>
+            <c:if test="${requestScope.logged_out != null}">
+                <div class="alert alert-info text-center border border-info">
+                    <b>${requestScope.logged_out}</b>
+                </div>
+            </c:if>
             <!-- Login Form -->
-            <form action="" class="login-form">
+            <form action="/login" method="POST" class="login-form">
+                <!-- form Group -->
+                <div class="form-group col">
+                    <input type="email" class="form-control form-control-lg" name="email" placeholder="Enter email" />
+                </div>
+                <!--End form Group -->
+                <!-- form Group -->
+                <div class="form-group col">
+                    <input type="password" class="form-control form-control-lg" name="password" placeholder=" Enter password" />
+                </div>
+                <!--End form Group -->
+                <input type="hidden" class="form-control form-control-lg" name="_token" value="${token}" />
 
-                <!-- form Group -->
-                <div class="form-group col">
-                    <input type="email" class="form-control form-control-lg" name="email" placeholder="Enter email" id="" />
-                </div>
-                <!--End form Group -->
-                <!-- form Group -->
-                <div class="form-group col">
-                    <input type="password" class="form-control form-control-lg" name="password" placeholder=" Enter password" id="" />
-                </div>
-                <!--End form Group -->
                 <!-- form Group -->
                 <div class="form-group col">
                     <button id="register" class="btn btn-lg">Login</button>
